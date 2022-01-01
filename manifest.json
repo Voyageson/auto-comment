@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+  
+    "name": "autocomment",
+    "description": "None",
+    "version": "1.0",
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://jiaowu.cqmu.edu.cn:8080/eams/evaluateStdByCourseOrTeacher!teacherEvaluate.action"],
+            "js": ["my.js"]
+        },
+        {
+            "matches": ["https://jiaowu.cqmu.edu.cn:8080/eams/evaluateStdByCourseOrTeacher!teacherEvaluate.action?t*"],
+            "js": ["my2.js"]
+      }
+    ],
+    "browser_action": {
+    }
+  }
