@@ -21,5 +21,5 @@ for (i of values) {
     i.click()
 }
 values = document.querySelectorAll('input[value="1"]')
-values[values.length-Math.round(Math.random()*9)+1].click()
+values[Math.round(Math.random()*9)].click()
 document.querySelector("#saveButton").click()
