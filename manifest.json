@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
   
-    "name": "autocomment",
+    "name": "quick-comment",
     "description": "None",
-    "version": "1.0",
+    "version": "1.1",
     "background": {
       "scripts": ["background.js"]
     },
@@ -16,7 +16,5 @@
             "matches": ["https://jiaowu.cqmu.edu.cn:8080/eams/evaluateStdByCourseOrTeacher!teacherEvaluate.action?t*"],
             "js": ["my2.js"]
       }
-    ],
-    "browser_action": {
-    }
+    ]
   }
