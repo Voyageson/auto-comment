@@ -1,18 +1,7 @@
-// get original script then delete
-let scripts = document.querySelectorAll('script')
-let script = scripts[scripts.length-1]
-let text = script.text
-script.remove()
-
-// delete '确认提交' content in script
-text = text.replace(`if (!confirm("确认提交?")){`, '')
-text = text.replace(`return;`, '')
-text = text.replace(`}`, '')
-
-// create new script
+// inject script overload confirm
 let new_s = document.createElement('script')
 new_s.setAttribute('type', 'text/JavaScript')
-new_s.text = text
+new_s.text = 'window.confirm = (str)=>{return true}'
 document.body.appendChild(new_s)
 
 // choose options
