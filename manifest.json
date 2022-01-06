@@ -7,6 +7,9 @@
     "background": {
       "scripts": ["background.js"]
     },
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
     "content_scripts": [
         {
             "matches": ["https://jiaowu.cqmu.edu.cn:8080/eams/evaluateStdByCourseOrTeacher!teacherEvaluate.action"],
