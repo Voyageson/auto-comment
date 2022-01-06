@@ -1,13 +1,16 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
   
     "name": "quick-comment",
     "description": "None",
     "version": "1.1",
+
+    "permissions": ["background", "tabs"],
+
     "background": {
-      "scripts": ["background.js"]
+      "service_worker": "background.js"
     },
-    "browser_action": {
+    "action": {
       "default_popup": "popup.html"
     },
     "content_scripts": [
@@ -18,6 +21,12 @@
         {
             "matches": ["https://jiaowu.cqmu.edu.cn:8080/eams/evaluateStdByCourseOrTeacher!teacherEvaluate.action?t*"],
             "js": ["my2.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["override.js"],
+        "matches": [ "https://jiaowu.cqmu.edu.cn:8080/*" ]
       }
     ]
   }
