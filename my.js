@@ -1,8 +1,8 @@
 // inject script overload confirm
-let new_s = document.createElement('script')
-new_s.setAttribute('type', 'text/JavaScript')
-new_s.text = 'window.confirm = (str)=>{return true}'
-document.body.appendChild(new_s)
+let script = document.createElement('script')
+script.setAttribute('type', 'text/JavaScript')
+script.src = chrome.runtime.getURL('override.js')
+document.body.appendChild(script)
 
 // choose options
 let values = document.querySelectorAll('input[value="2"]')
@@ -11,4 +11,6 @@ for (i of values) {
 }
 values = document.querySelectorAll('input[value="1"]')
 values[Math.round(Math.random()*9)].click()
-document.querySelector("#saveButton").click()
+script.onload = ()=>{
+    document.querySelector("#saveButton").click()
+}
